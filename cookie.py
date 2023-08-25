@@ -1,9 +1,7 @@
 import asyncio
 
 from damai.performer import ApiFetchPerform
-
-COOKIE = ""
-
+from set_cookie import COOKIE
 
 async def make_cookie():
     """滑块"""
@@ -13,5 +11,6 @@ async def make_cookie():
     print(response.get("data", {}).get("url"))
     await instant.close()
 
+if __name__ == '__main__':
 
-asyncio.run(make_cookie())
+    asyncio.run(make_cookie())
