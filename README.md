@@ -33,5 +33,16 @@
 
 - 在代码中主要关注performer，example3。类中有使用注释。
 
-### ps
-- 提前登录, 提前在大麦app中添加观演人及收货地址电话。
+### 如何获取cookie
+- 在chrome浏览器登录大麦，键盘ctrl+shift+I![img.png](img.png)
+- 将此cookie替换ticket-damai/set_cookie/set_coolie.py中的123
+- 运行ticket-damai/cookie.py，将得到一个链接，复制此链接并在和大麦同一个浏览器打开，会请求你进行滑块验证，验证成功后自动跳转到淘宝。将淘宝页面关闭。
+-
+### 抢票步骤
+- 提前登录, 提前在大麦app中添加观演人及收货地址电话（可以在手机设置）。
+- 在chrome浏览器登录大麦，进入你要抢的演唱会详情页，获取cookie
+- 通过cookie获取滑块验证的URL
+- 浏览器打开URL，滑块成功后，回到大麦的页面，在你要抢的演唱会详情页，刷新获取最新的cookie，这是用于抢票的cookie
+- 放入config.yaml中
+- 设置好config.yaml中的各项参数
+- 运行run.py
